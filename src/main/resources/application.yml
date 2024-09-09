@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: todolist
+  datasource:
+    url: jdbc:h2:mem:testdb # Usando um banco de dados em memória para testes
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true # Habilita o console web do H2
+      path: /h2-console # Caminho para acessar o console web
+  jpa:
+    hibernate:
+      ddl-auto: update # Configuração de esquema do banco de dados
+    show-sql: true # Exibe as queries SQL no log
