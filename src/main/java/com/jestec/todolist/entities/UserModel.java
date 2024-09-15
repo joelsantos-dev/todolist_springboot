@@ -1,8 +1,9 @@
 package com.jestec.todolist.entities;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.hibernate.annotations.CurrentTimestamp;
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,8 +18,8 @@ public class UserModel {
 @GeneratedValue(generator = "UUID")
 private UUID id;
 
-@CurrentTimestamp
-private String createAt;
+@CreationTimestamp
+private LocalDateTime createdAt;
 
 @Column(unique = true)
 private String username;
@@ -32,11 +33,11 @@ public UUID getId() {
 public void setId(UUID id) {
     this.id = id;
 }
-public String getCreateAt() {
-    return createAt;
+public LocalDateTime getCreateAt() {
+    return createdAt;
 }
-public void setCreateAt(String createAt) {
-    this.createAt = createAt;
+public void setCreateAt(LocalDateTime createAt) {
+    this.createdAt = createAt;
 }
 public String getUsername() {
     return username;
